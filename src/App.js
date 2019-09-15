@@ -1,20 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-//import {Button,Container,Table,Col,Card} from 'react-bootstrap' ;
-import { Container, Row, Col } from 'reactstrap';
+import {Button,Container,Table,Col,Card} from 'react-bootstrap' ;
 
 
-const styles =
-{
-  vert  : {
-    height: window.innerHeight,
-    overflowY:'100%'
-  },
-  wit: {
-    width : '40%'
-  }
-}
 class App extends React.Component 
 {
   constructor(props)
@@ -104,16 +93,17 @@ class App extends React.Component
     console.log(this.state.rightGrid);
   return (
     <div>
-      <div className = "header">
+      <div className ="header">
         <h1><i className = "fa fa-truck text-primary"></i>   Delivery Personnel<span className ="text-primary">Manager</span> </h1>
       </div>
-          <table id="left">
+      <div className = "row">
+      <div className="col-sm-5 col-xs-5 full">
+          <table>
             <tbody>
               {this.state.leftGrid.map(function(rows)
               {
                   return(
-                    <tr rowspan = "2" >
-
+                    <tr>
                       {rows.map(function(columns)
                       {
                         if(columns)
@@ -131,18 +121,23 @@ class App extends React.Component
 
             </tbody>
           </table>
+        </div>
+        <div className="buttonalign">
+        <div className = "col-xs-2 col-sm-2 full">
             <button className = "btn btn-primary" id="assign"
             onClick={()=>this.assignPersonnel()}>
               Assign
             </button>
-         
+         <br/>
+         <br/><br/>
             <button className = "btn btn-primary" id="revoke"
             onClick={()=>this.revokePersonnel()}>
               Revoke
             </button>
-        
-        
-          <table id="right">
+            </div>
+            </div>
+        <div className="col-sm-5 col-xs-5 full">
+          <table>
             <tbody>
             {this.state.rightGrid.map(function(rows)
               {
@@ -166,6 +161,8 @@ class App extends React.Component
               })}
             </tbody>
           </table>
+        </div>
+        </div>
     </div>
   );
 }

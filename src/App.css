@@ -4,7 +4,23 @@
     margin-top:5px;
     text-align: center;
 }
-.middle
+
+html,body
 {
-    text-align: center;
+    height:100%;
+}
+.full
+{
+    height:100%;
+}
+i{
+    font-size : 80px !important;
+}
+table
+{
+    margin:auto !important;
+}
+.buttonalign
+{
+    margin:auto;
 }
