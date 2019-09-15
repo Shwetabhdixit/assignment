@@ -24,3 +24,8 @@ table
 {
     margin:auto;
 }
+
+h3 i{
+    font-size: 30px!important;
+    margin:120px;
+}
